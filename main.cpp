@@ -1,11 +1,49 @@
 #include <iostream>
 #include "core/Pose.h"
 #include "QuinticSpline.h"
+#include "sciplot/sciplot.hpp"
+using namespace sciplot;
 
 int main() {
-    Pose posea = Pose(0,0, M_PI);
-    Pose poseb = Pose(1,0.5, M_PI/2);
+    Pose posea = Pose(0,0, 0 * (M_PI / 180.0));
+    Pose poseb = Pose(1,0.5, 90 * (M_PI / 180.0));
     QuinticSpline qs = QuinticSpline(posea,poseb);
-    std::cout << qs.fof(0.1).toString() << std::endl;8560/2;
+
+    Vec t = linspace(0.0, 1, 200);
+
+
+    // Create a Plot object
+    Plot plot;
+    // Set the x and y labels
+    plot.xlabel("x");
+    plot.ylabel("y");
+
+    // Set the x and y ranges
+    plot.xrange(-0.2, 2.0);
+    plot.yrange(-0.2, 1.0);
+
+    // Set the legend to be on the bottom along the horizontal
+    plot.legend()
+            .atOutsideBottom()
+            .displayHorizontal()
+            .displayExpandWidthBy(2);
+    Vec xs, ys;
+    xs.resize(t.size());
+    ys.resize(t.size());
+    for(int tidx = 0; tidx < t.size(); tidx +=1){
+        double tval = t[tidx];
+        Pose tpose = qs.fof(tval);
+        xs[tidx] = tpose.getX();
+        ys[tidx] += tpose.getY();
+    }
+//    std::cout << xs << "\n";
+    // Plot sin(i*x) from i = 1 to i = 6
+    plot.drawCurve(xs, ys).label("QS");
+    // Show the plot in a pop-up window
+    Figure fig = {{plot}};
+    fig.title( posea.toString() + " --> " + poseb.toString());
+    fig.size(1000,500);
+    fig.show();
+
     return 0;
 }

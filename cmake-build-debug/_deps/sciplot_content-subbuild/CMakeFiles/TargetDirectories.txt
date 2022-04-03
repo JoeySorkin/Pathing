@@ -1,0 +1,3 @@
+/Users/joeysorkin/Desktop/Big Folder o' Programming.nosync/vex/Pather/cmake-build-debug/_deps/sciplot_content-subbuild/CMakeFiles/rebuild_cache.dir
+/Users/joeysorkin/Desktop/Big Folder o' Programming.nosync/vex/Pather/cmake-build-debug/_deps/sciplot_content-subbuild/CMakeFiles/edit_cache.dir
+/Users/joeysorkin/Desktop/Big Folder o' Programming.nosync/vex/Pather/cmake-build-debug/_deps/sciplot_content-subbuild/CMakeFiles/sciplot_content-populate.dir

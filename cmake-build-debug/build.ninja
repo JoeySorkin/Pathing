@@ -68,19 +68,19 @@ build cmake_object_order_depends_target_Pather: phony || CMakeFiles/Pather.dir
 
 build CMakeFiles/Pather.dir/main.cpp.o: CXX_COMPILER__Pather_Debug ../main.cpp || cmake_object_order_depends_target_Pather
   DEP_FILE = CMakeFiles/Pather.dir/main.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir
 
 build CMakeFiles/Pather.dir/core/Pose.cpp.o: CXX_COMPILER__Pather_Debug ../core/Pose.cpp || cmake_object_order_depends_target_Pather
   DEP_FILE = CMakeFiles/Pather.dir/core/Pose.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir/core
 
 build CMakeFiles/Pather.dir/QuinticSpline.cpp.o: CXX_COMPILER__Pather_Debug ../QuinticSpline.cpp || cmake_object_order_depends_target_Pather
   DEP_FILE = CMakeFiles/Pather.dir/QuinticSpline.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++14
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir
 

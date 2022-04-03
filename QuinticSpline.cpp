@@ -3,11 +3,13 @@
 //
 
 #include "QuinticSpline.h"
+#include "iostream"
 /*
  * returns a point at a t=
  * https://www.desmos.com/calculator/gfbiikwcmk :(
  */
 Pose QuinticSpline::fof(double t) {
+//std::cout << std::to_string(t) << std::endl;
   double originaccelx = 0;
   double originaccely = 0;
   double destinationaccelx = 0;

@@ -204,6 +204,29 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Directory under which to collect all populated content
+FETCHCONTENT_BASE_DIR:PATH=/Users/joeysorkin/Desktop/Big Folder o' Programming.nosync/vex/Pather/cmake-build-debug/_deps
+
+//Disables all attempts to download or update content and assumes
+// source dirs already exist
+FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+
+//Enables QUIET option for all content population
+FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for sciplot_content
+FETCHCONTENT_SOURCE_DIR_SCIPLOT_CONTENT:PATH=
+
+//Enables UPDATE_DISCONNECTED behavior for all content population
+FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of sciplot_content
+FETCHCONTENT_UPDATES_DISCONNECTED_SCIPLOT_CONTENT:BOOL=OFF
+
+//Git command line client
+GIT_EXECUTABLE:FILEPATH=/usr/bin/git
+
 //Value Computed by CMake
 Pather_BINARY_DIR:STATIC=/Users/joeysorkin/Desktop/Big Folder o' Programming.nosync/vex/Pather/cmake-build-debug
 
@@ -346,4 +369,6 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: GIT_EXECUTABLE
+GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 
