@@ -1,13 +1,13 @@
 #TODO
 
 ## Testing 
-- [ ] Add in c++ matplotlib for graphs
+- [x] Add in c++ graphing (sciplot)
 
 ## Implementations
- - [ ] Cubic Splines I guess
- - [ ] Cubic + Quintic Bezier Curves
+ - [?] Quintic Splines (it like half works)
+ - [ ] Cubic Splines
+ - [ ] Bezier Curves
  - [ ] PP :) 
 
 ## Other stuff
- - [ ] Add in max velocities and accelerations??? idk if this is even possible
- - 
+- [ ] Cap derivatives (maxaccel/maxvel) idk if this actually works
