@@ -6,7 +6,7 @@
 #define PATHER_QUINTICSPLINE_H
 
 #include "math.h"
-#include "Path.h"
+#include "../Path.h"
 
 class QuinticSpline : Path {
     private:

@@ -1,13 +1,15 @@
 #include <iostream>
 #include "core/Pose.h"
-#include "QuinticSpline.h"
+#include "QSplines/QuinticSpline.h"
 #include "sciplot/sciplot.hpp"
+#include "Bezier.h"
+
 using namespace sciplot;
 
 int main() {
-    Pose posea = Pose(0,0, 30);
-    Pose poseb = Pose(1,1, 75 );
-    QuinticSpline qs = QuinticSpline(posea,poseb);
+    Pose posea = Pose(0,0, 90 * (M_PI/180.0));
+    Pose poseb = Pose(1,1, 0 * (M_PI/180.0));
+    Bezier bs = Bezier(posea, 1 ,poseb, -1);
 
     Vec t = linspace(0.0, 1, 200);
 
@@ -32,7 +34,7 @@ int main() {
     ys.resize(t.size());
     for(int tidx = 0; tidx < t.size(); tidx +=1){
         double tval = t[tidx];
-        Pose tpose = qs.fof(tval);
+        Pose tpose = bs.pointFromT(tval);
         xs[tidx] = tpose.getX();
         ys[tidx] += tpose.getY();
     }
