@@ -10,9 +10,11 @@
 
 class QuinticSpline : Path {
     private:
-        Pose origin, destination;
-    public:
-        QuinticSpline(Pose start, Pose end);
+        Pose *destination;
+        Pose *origin;
+        double d, oVx, oVy, dVx, dVy;
+public:
+        QuinticSpline(Pose& start, Pose& end);
         Pose fof(double t);
 
 };

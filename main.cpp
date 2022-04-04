@@ -5,8 +5,8 @@
 using namespace sciplot;
 
 int main() {
-    Pose posea = Pose(0,0, 0 * (M_PI / 180.0));
-    Pose poseb = Pose(1,0.5, 90 * (M_PI / 180.0));
+    Pose posea = Pose(0,0, 30);
+    Pose poseb = Pose(1,1, 75 );
     QuinticSpline qs = QuinticSpline(posea,poseb);
 
     Vec t = linspace(0.0, 1, 200);
@@ -19,8 +19,8 @@ int main() {
     plot.ylabel("y");
 
     // Set the x and y ranges
-    plot.xrange(-0.2, 2.0);
-    plot.yrange(-0.2, 1.0);
+    plot.xrange(-0.2, 1.2);
+    plot.yrange(-0.2, 1.2);
 
     // Set the legend to be on the bottom along the horizontal
     plot.legend()

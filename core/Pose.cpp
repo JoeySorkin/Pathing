@@ -34,3 +34,11 @@ double Pose::getH() {
     return heading;
 }
 
+double Pose::getDistance(Pose* a, Pose* b) {
+    return sqrt(pow((a->getX() - b->getX()), 2) + pow((a->getY() - b->getY()), 2));
+}
+
+double Pose::getDistance(Pose* b) {
+    Pose::getDistance(this, b);
+}
+
