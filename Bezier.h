@@ -7,8 +7,11 @@
 
 
 #include "core/Pose.h"
+#include "Path.h"
 #include <cmath>
-class Bezier {
+#include <vector>
+
+class Bezier : public Path {
 private:
     typedef struct cpoint_s {
         Pose pose;
@@ -16,9 +19,14 @@ private:
     } cpoint_s_t;
 
     cpoint_s_t origin, destination;
+    double Bx,By,Cx,Cy;
 public:
     Bezier(Pose a, double amag, Pose b, double bmag);
-    Pose pointFromT(double t);
+    Pose pointFromT(double t) override;
+
+    Pose derivativeFromT(double t);
+
+    std::vector<Pose> integrator();
 };
 
 

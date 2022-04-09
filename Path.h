@@ -9,7 +9,7 @@
 #include "core/Pose.h"
 
 class Path {
-    virtual Pose fof(double t) = 0;
+    virtual Pose pointFromT(double t) = 0;
 };
 
 
