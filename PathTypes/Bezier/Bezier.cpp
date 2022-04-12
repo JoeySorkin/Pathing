@@ -15,7 +15,7 @@ Bezier::Bezier(Pose a, double amag, Pose b, double bmag) {
 }
 
 
-Pose Bezier::pointFromT(double t){
+Pose Bezier::pointFromT(double t) const {
     // Bernstein polynomials for cubic bezier splines
     double b1 = pow((1 - t), 3);
     double b2 = 3 * t * pow((1 - t), 2);
@@ -28,8 +28,8 @@ Pose Bezier::pointFromT(double t){
     return Pose(bx,by);
 }
 
-// may not be right
-Pose Bezier::derivativeFromT(double t){
+
+Pose Bezier::derivativeFromT(double t) const {
     double b1d = -3 *  pow((1 - t), 2);
     double b2d = 9 * pow(t,2) - 12 * t + 3;
     double b3d = 3 * (2 - 3 * t) * t;
@@ -41,17 +41,10 @@ Pose Bezier::derivativeFromT(double t){
     return Pose(bxd,byd);
 }
 
-
-std::vector<Pose> Bezier::integrator(){
-
-
-    double lastMark = 0;
-    double markInterval = 0.1;
-    std::vector<Pose> marks ;
+double Bezier::getLength() const {
     double sum = 0;
     double dt = 0.000001;
 
-    marks.emplace_back(origin.pose);
     for(double t = 0; t < 1; t += dt){
         // trapezoidal integration
         double t_plus =  t + dt;
@@ -60,18 +53,39 @@ std::vector<Pose> Bezier::integrator(){
         double arclength_b = sqrt((pow(b.getX(), 2) + pow(b.getY(), 2)));
         double arclength_a = sqrt((pow(a.getX(), 2) + pow(a.getY(), 2)));
         sum += (arclength_a + arclength_b)/2.0 * dt;
-
-        //checks how far we have traveled
-        if(sum - lastMark > markInterval){
-            marks.emplace_back(pointFromT(t));
-            printf("∆Sum = %f\n", sum-lastMark);
-            lastMark = sum;
-
-        }
     }
-//    printf("LENGTH: %f \n", sum);
-    return marks;
+
+    return sum;
 }
+//std::vector<Pose> Bezier::integrator(){
+//    double lastMark = 0;
+//    double markInterval = 0.1;
+//    std::vector<Pose> marks ;
+//    double sum = 0;
+//    double dt = 0.000001;
+//
+//    marks.emplace_back(origin.pose);
+//    for(double t = 0; t < 1; t += dt){
+//        // trapezoidal integration
+//        double t_plus =  t + dt;
+//        Pose a = derivativeFromT(t);
+//        Pose b = derivativeFromT(t_plus);
+//        double arclength_b = sqrt((pow(b.getX(), 2) + pow(b.getY(), 2)));
+//        double arclength_a = sqrt((pow(a.getX(), 2) + pow(a.getY(), 2)));
+//        sum += (arclength_a + arclength_b)/2.0 * dt;
+//
+//        //checks how far we have traveled
+//        if(sum - lastMark > markInterval){
+//            marks.emplace_back(pointFromT(t));
+//            printf("∆Sum = %f\n", sum-lastMark);
+//            lastMark = sum;
+//
+//        }
+//    }
+//    marks.emplace_back(destination.pose);
+//
+//    return marks;
+//}
 
 
 

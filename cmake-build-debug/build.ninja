@@ -67,34 +67,46 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 build cmake_object_order_depends_target_Pather: phony || CMakeFiles/Pather.dir
 
 build CMakeFiles/Pather.dir/main.cpp.o: CXX_COMPILER__Pather_Debug ../main.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
   DEP_FILE = CMakeFiles/Pather.dir/main.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir
 
 build CMakeFiles/Pather.dir/core/Pose.cpp.o: CXX_COMPILER__Pather_Debug ../core/Pose.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
   DEP_FILE = CMakeFiles/Pather.dir/core/Pose.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir/core
 
-build CMakeFiles/Pather.dir/QSplines/QuinticSpline.cpp.o: CXX_COMPILER__Pather_Debug ../QSplines/QuinticSpline.cpp || cmake_object_order_depends_target_Pather
-  DEP_FILE = CMakeFiles/Pather.dir/QSplines/QuinticSpline.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+build CMakeFiles/Pather.dir/PathTypes/QSplines/QuinticSpline.cpp.o: CXX_COMPILER__Pather_Debug ../PathTypes/QSplines/QuinticSpline.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
+  DEP_FILE = CMakeFiles/Pather.dir/PathTypes/QSplines/QuinticSpline.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   OBJECT_DIR = CMakeFiles/Pather.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/QSplines
+  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/PathTypes/QSplines
 
-build CMakeFiles/Pather.dir/Bezier.cpp.o: CXX_COMPILER__Pather_Debug ../Bezier.cpp || cmake_object_order_depends_target_Pather
-  DEP_FILE = CMakeFiles/Pather.dir/Bezier.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+build CMakeFiles/Pather.dir/PathTypes/Bezier/Bezier.cpp.o: CXX_COMPILER__Pather_Debug ../PathTypes/Bezier/Bezier.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
+  DEP_FILE = CMakeFiles/Pather.dir/PathTypes/Bezier/Bezier.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   OBJECT_DIR = CMakeFiles/Pather.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pather.dir
+  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/PathTypes/Bezier
 
-build CMakeFiles/Pather.dir/Linear.cpp.o: CXX_COMPILER__Pather_Debug ../Linear.cpp || cmake_object_order_depends_target_Pather
-  DEP_FILE = CMakeFiles/Pather.dir/Linear.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++17
+build CMakeFiles/Pather.dir/PathTypes/Linear/Linear.cpp.o: CXX_COMPILER__Pather_Debug ../PathTypes/Linear/Linear.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
+  DEP_FILE = CMakeFiles/Pather.dir/PathTypes/Linear/Linear.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
   OBJECT_DIR = CMakeFiles/Pather.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pather.dir
+  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/PathTypes/Linear
+
+build CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o: CXX_COMPILER__Pather_Debug ../PathTypes/Combined/Combined.cpp || cmake_object_order_depends_target_Pather
+  DEFINES = -DPLOTPOINTS
+  DEP_FILE = CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o.d
+  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
+  OBJECT_DIR = CMakeFiles/Pather.dir
+  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/PathTypes/Combined
 
 
 # =============================================================================
@@ -104,7 +116,7 @@ build CMakeFiles/Pather.dir/Linear.cpp.o: CXX_COMPILER__Pather_Debug ../Linear.c
 #############################################
 # Link the executable Pather
 
-build Pather: CXX_EXECUTABLE_LINKER__Pather_Debug CMakeFiles/Pather.dir/main.cpp.o CMakeFiles/Pather.dir/core/Pose.cpp.o CMakeFiles/Pather.dir/QSplines/QuinticSpline.cpp.o CMakeFiles/Pather.dir/Bezier.cpp.o CMakeFiles/Pather.dir/Linear.cpp.o
+build Pather: CXX_EXECUTABLE_LINKER__Pather_Debug CMakeFiles/Pather.dir/main.cpp.o CMakeFiles/Pather.dir/core/Pose.cpp.o CMakeFiles/Pather.dir/PathTypes/QSplines/QuinticSpline.cpp.o CMakeFiles/Pather.dir/PathTypes/Bezier/Bezier.cpp.o CMakeFiles/Pather.dir/PathTypes/Linear/Linear.cpp.o CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
   OBJECT_DIR = CMakeFiles/Pather.dir
   POST_BUILD = :

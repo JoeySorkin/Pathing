@@ -6,8 +6,8 @@
 #define PATHER_BEZIER_H
 
 
-#include "core/Pose.h"
-#include "Path.h"
+#include "../../core/Pose.h"
+#include "../../core/Path.h"
 #include <cmath>
 #include <vector>
 
@@ -22,11 +22,11 @@ private:
     double Bx,By,Cx,Cy;
 public:
     Bezier(Pose a, double amag, Pose b, double bmag);
-    Pose pointFromT(double t) override;
+    Pose pointFromT(double t) const override;
 
-    Pose derivativeFromT(double t);
-
-    std::vector<Pose> integrator();
+    Pose derivativeFromT(double t) const override;
+    double getLength() const override;
+//    std::vector<Pose> integrator();
 };
 
 

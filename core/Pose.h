@@ -13,12 +13,15 @@ class Pose {
 public:
     explicit Pose(double _x = 0, double _y = 0, double _heading = 0);
     std::string toString();
-    double getX();
-    double getY();
-    double getH();
+    [[nodiscard]] double getX() const;
+    [[nodiscard]] double getY() const;
+    [[nodiscard]] double getH() const;
 
-    static double getDistance(Pose* a, Pose* b);
-    double getDistance(Pose* b);
+    static double getDistance(Pose const& a, Pose const& b);
+    [[nodiscard]] double getDistance(Pose const& b) const;
+
+    Pose operator+(Pose const& pose) const;
+    Pose operator-(Pose const& pose) const;
 };
 
 

@@ -6,7 +6,7 @@
 #define PATHER_LINEAR_H
 
 
-#include "Path.h"
+#include "../../core/Path.h"
 
 class Linear : public Path {
 
@@ -14,9 +14,11 @@ class Linear : public Path {
     Pose origin, destination;
     double m;
 public:
-    Pose pointFromT(double t) override;
-    Linear(Pose start, Pose end);
 
+    Linear(Pose start, Pose end);
+    Pose pointFromT(double t) const override;
+    Pose derivativeFromT(double t) const override;
+    double getLength() const override;
     static double lerp(double a, double b, double t);
 };
 
