@@ -20,6 +20,12 @@ public:
     Pose derivativeFromT(double t) const override;
     double getLength() const override;
     static double lerp(double a, double b, double t);
+    Pose dubderivativeFromT(double t) const override;
+    double getTfromDistance(double distance) override;
+
+    Pose getOrigin() override;
+
+    Pose getDestination() override;
 };
 
 

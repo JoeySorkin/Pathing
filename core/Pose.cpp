@@ -4,11 +4,10 @@
 
 #include "Pose.h"
 
-
-Pose::Pose(double _x, double _y, double _heading){
+Pose::Pose(double _x, double _y, double _heading, AngleType angletype){
     x = _x;
     y = _y;
-    heading = _heading;
+    heading = angletype == DEG ? _heading * M_PI/180.0 : _heading;
 }
 std::string Pose::toString(){
     std::string sx = std::to_string((x));

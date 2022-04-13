@@ -22,8 +22,25 @@ Pose Linear::pointFromT(double t) const {
 Pose Linear::derivativeFromT(double t) const {
     return destination - origin;
 }
+Pose Linear::dubderivativeFromT(double t) const{
+    return Pose(0,0);
+}
 
 double Linear::getLength() const {
     return origin.getDistance(destination);
 }
 
+double Linear::getTfromDistance(double distance) {
+    if(distance >= 0 && distance <= getLength()){
+        return distance / getLength();
+    } else {
+        return -1;
+    }
+}
+
+Pose Linear::getOrigin() {
+    return origin;
+}
+Pose Linear::getDestination() {
+    return destination;
+}

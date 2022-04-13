@@ -3,6 +3,8 @@
 //
 #include <string>
 #include <cmath>
+#include "./extras.h"
+
 #ifndef PATHER_POSE_H
 #define PATHER_POSE_H
 
@@ -11,7 +13,7 @@ class Pose {
     double x,y,heading;
 
 public:
-    explicit Pose(double _x = 0, double _y = 0, double _heading = 0);
+    explicit Pose(double _x = 0, double _y = 0, double _heading = 0, AngleType angletype=RAD);
     std::string toString();
     [[nodiscard]] double getX() const;
     [[nodiscard]] double getY() const;
