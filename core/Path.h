@@ -21,7 +21,7 @@ public:
         Pose dt = derivativeFromT(t);
         Pose ddt = dubderivativeFromT(t);
         double numerator = dt.getX() * ddt.getY() - dt.getY() - ddt.getX();
-        double denominator = pow((pow(dt.getX(), 2) + pow(dt.getY(), 2)),3/2);
+        double denominator = pow((pow(dt.getX(), 2.0) + pow(dt.getY(), 2.0)),3.0/2.0);
         return numerator / denominator;
     }
 

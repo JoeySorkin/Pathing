@@ -108,13 +108,6 @@ build CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o: CXX_COMPILER__Pat
   OBJECT_DIR = CMakeFiles/Pather.dir
   OBJECT_FILE_DIR = CMakeFiles/Pather.dir/PathTypes/Combined
 
-build CMakeFiles/Pather.dir/IO/IO.cpp.o: CXX_COMPILER__Pather_Debug ../IO/IO.cpp || cmake_object_order_depends_target_Pather
-  DEFINES = -DPLOTPOINTS
-  DEP_FILE = CMakeFiles/Pather.dir/IO/IO.cpp.o.d
-  FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++2a
-  OBJECT_DIR = CMakeFiles/Pather.dir
-  OBJECT_FILE_DIR = CMakeFiles/Pather.dir/IO
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target Pather
@@ -123,7 +116,7 @@ build CMakeFiles/Pather.dir/IO/IO.cpp.o: CXX_COMPILER__Pather_Debug ../IO/IO.cpp
 #############################################
 # Link the executable Pather
 
-build Pather: CXX_EXECUTABLE_LINKER__Pather_Debug CMakeFiles/Pather.dir/main.cpp.o CMakeFiles/Pather.dir/core/Pose.cpp.o CMakeFiles/Pather.dir/PathTypes/QSplines/QuinticSpline.cpp.o CMakeFiles/Pather.dir/PathTypes/Bezier/Bezier.cpp.o CMakeFiles/Pather.dir/PathTypes/Linear/Linear.cpp.o CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o CMakeFiles/Pather.dir/IO/IO.cpp.o
+build Pather: CXX_EXECUTABLE_LINKER__Pather_Debug CMakeFiles/Pather.dir/main.cpp.o CMakeFiles/Pather.dir/core/Pose.cpp.o CMakeFiles/Pather.dir/PathTypes/QSplines/QuinticSpline.cpp.o CMakeFiles/Pather.dir/PathTypes/Bezier/Bezier.cpp.o CMakeFiles/Pather.dir/PathTypes/Linear/Linear.cpp.o CMakeFiles/Pather.dir/PathTypes/Combined/Combined.cpp.o
   FLAGS = -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk
   OBJECT_DIR = CMakeFiles/Pather.dir
   POST_BUILD = :
